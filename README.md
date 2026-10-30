@@ -1,5 +1,7 @@
 # Managed batch descriptions
 
+> **Work in progress.** Coverage starts with Consumer Goods Cloud and will grow over time to other managed packages. The long-term goal is a reference for most of the automated processes that run in or connect to Salesforce. The format may change, or move to a different tool, as it grows.
+
 `managed-batches.json` provides descriptions for Salesforce managed-package batch classes (Consumer Goods Cloud). Salesforce strips the doc comments from managed code, so a tool listing an org's batches can't read these descriptions from the org. This file fills the gap. The SBX Batch Runner browser extension reads it from:
 
 ```
@@ -23,8 +25,11 @@ Each key is the class's API name, `namespace.ClassName`.
 
 ## Coverage
 
-- **cgcloud:** all 21 global batch classes in package version 260.2 are listed. 12 are described from Salesforce docs. 9 have no public documentation yet (`description: null`).
-- **maps:** none. Salesforce Maps has no global batch classes, so none of its batches can be started from outside the package.
+| Package | Status |
+| --- | --- |
+| `cgcloud` (Consumer Goods Cloud) | All 21 global batch classes in package version 260.2 are listed. 12 are described from Salesforce docs; 9 have no public documentation yet (`description: null`). |
+
+Other packages will be added as they come up.
 
 ## Adding or fixing an entry
 
