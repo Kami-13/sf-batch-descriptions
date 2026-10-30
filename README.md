@@ -2,7 +2,7 @@
 
 > **Work in progress.** Coverage starts with Consumer Goods Cloud and will grow over time to other managed packages. The long-term goal is a reference for most of the automated processes that run in or connect to Salesforce. The format may change, or move to a different tool, as it grows.
 
-`managed-batches.json` provides descriptions for Salesforce managed-package batch classes (Consumer Goods Cloud). Salesforce strips the doc comments from managed code, so a tool listing an org's batches can't read these descriptions from the org. This file fills the gap. The SBX Batch Runner browser extension reads it from:
+`managed-batches.json` provides descriptions for Salesforce managed-package batch classes (Consumer Goods Cloud). Salesforce strips the doc comments from managed code, so a tool listing an org's batches can't read these descriptions from the org. This file fills the gap. The SF Batch Runner browser extension reads it from:
 
 ```
 https://raw.githubusercontent.com/Kami-13/sbx-batch-descriptions/main/managed-batches.json
