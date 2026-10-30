@@ -5,7 +5,7 @@
 `managed-batches.json` provides descriptions for Salesforce managed-package batch classes (Consumer Goods Cloud). Salesforce strips the doc comments from managed code, so a tool listing an org's batches can't read these descriptions from the org. This file fills the gap. The SF Batch Runner browser extension reads it from:
 
 ```
-https://raw.githubusercontent.com/Kami-13/sbx-batch-descriptions/main/managed-batches.json
+https://raw.githubusercontent.com/Kami-13/sf-batch-descriptions/main/managed-batches.json
 ```
 
 Your own (unmanaged) batches don't belong here. Their descriptions come from the class's doc comment (`@description`).
