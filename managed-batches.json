@@ -1,0 +1,122 @@
+{
+  "version": 1,
+  "updated": "2026-10-30",
+  "batches": {
+    "cgcloud.AccountClearEffectiveParentBatch": {
+      "description": null,
+      "source": null,
+      "verified": false
+    },
+    "cgcloud.AccountManagerOrgUnitBased": {
+      "description": "Assigns customer managers to accounts based on org units, so account managers don't have to be maintained by hand on each account.",
+      "source": "https://help.salesforce.com/s/articleView?id=ind.cg_reference_admin_account_manager_batch.htm&language=en_US&type=5",
+      "verified": false
+    },
+    "cgcloud.AggregatePromotionBatch": {
+      "description": "Creates promotion-store records that link promotions to stores, so visits show their promotions and orders show their promoted products. Since Spring '25 it only considers promotions of the Sellable Promotion record type.",
+      "configName": "PromotionAggregation",
+      "source": "https://help.salesforce.com/s/articleView?language=en_US&id=ind.cg_reference_admin_batch_process_list.htm&type=5",
+      "verified": false
+    },
+    "cgcloud.AssetAuditDistributionReOrgBatch": {
+      "description": "Marks asset audits as not relevant for distribution to the mobile app when they aren't business-critical for the mobile user.",
+      "configName": "AssetAuditDistributionSetting",
+      "source": "https://help.salesforce.com/s/articleView?language=en_US&id=ind.cg_reference_admin_batch_process_list.htm&type=5",
+      "verified": false
+    },
+    "cgcloud.AuthorizationListSetupBatch": {
+      "description": "Finds the authorization list for each store by walking up the account hierarchy from the lowest level; the first list found becomes the store's authorization list.",
+      "source": "https://help.salesforce.com/s/articleView?id=ind.cg_reference_admin_authorization_list_setup_batch.htm&language=en_US&type=5",
+      "verified": false
+    },
+    "cgcloud.CallOrderDistributionReOrgBatch": {
+      "description": "Flags past visits and orders on distribution-relevant accounts so the offline mobile app only syncs relevant records. Records already flagged as not relevant are skipped; updates up to 10,000 records per transaction, prioritizing visits over orders.",
+      "batchSize": 1,
+      "notes": "Salesforce recommends running it with batch size 1.",
+      "source": "https://help.salesforce.com/s/articleView?id=ind.cg_reference_admin_call_distribution_batch.htm&language=en_US&type=5",
+      "verified": false
+    },
+    "cgcloud.CustomerSegmentationCalculationBatch": {
+      "description": null,
+      "source": null,
+      "verified": false
+    },
+    "cgcloud.CustomerSegmentationCalculationBatchV2": {
+      "description": null,
+      "source": null,
+      "verified": false
+    },
+    "cgcloud.EffectiveAccountManagerSyncBatch": {
+      "description": "Creates account team members from valid customer managers, giving those managers access to the account.",
+      "source": "https://help.salesforce.com/s/articleView?language=en_US&id=ind.cg_reference_admin_batch_process_list.htm&type=5",
+      "verified": false
+    },
+    "cgcloud.EffectiveAccountParentSyncBatch": {
+      "description": "Syncs effective account parents from the account hierarchy so access is consistent across the app.",
+      "source": "https://help.salesforce.com/s/articleView?language=en_US&id=ind.cg_reference_admin_batch_process_list.htm&type=5",
+      "notes": "Low confidence: the indexed text was thin. Check the source page.",
+      "verified": false
+    },
+    "cgcloud.FlattenAccountHierarchyBatch": {
+      "description": "Flattens the account hierarchy into Flatten Account Hierarchy records, used to search across all customer hierarchy levels (for example, when applying pricing conditions and customer segmentation). Fields outside the cgcloud namespace are left untouched.",
+      "notes": "Requires the metadata from the post-installation files to be deployed first.",
+      "source": "https://help.salesforce.com/s/articleView?language=en_US&id=ind.cg_task_admin_run_batch_processes.htm&type=5",
+      "verified": false
+    },
+    "cgcloud.GenerateJobListBatch": {
+      "description": "Creates job lists from event-driven activities.",
+      "configName": "JobListGeneration",
+      "source": "https://help.salesforce.com/s/articleView?language=en_US&id=ind.cg_reference_admin_batch_process_list.htm&type=5",
+      "verified": false
+    },
+    "cgcloud.InventoryTxBalanceCalculationBatch": {
+      "description": "Calculates product stock balances from inventory transactions.",
+      "configName": "InventoryTxBalanceCalculationBatch",
+      "source": "https://help.salesforce.com/s/articleView?language=en_US&id=ind.cg_reference_admin_batch_process_list.htm&type=5",
+      "verified": false
+    },
+    "cgcloud.KAMProductFindingBatch": {
+      "description": "Flattens the product hierarchy into a single field, used to find SKUs for surveys and order taking and to identify the promotions planned for those products.",
+      "configName": "KAMProducts",
+      "source": "https://help.salesforce.com/s/articleView?language=en_US&id=ind.cg_reference_admin_batch_process_list.htm&type=5",
+      "verified": false
+    },
+    "cgcloud.KpiSetTransferBatch": {
+      "description": null,
+      "source": null,
+      "verified": false
+    },
+    "cgcloud.PostInstallDemoSetupDataBatch": {
+      "description": null,
+      "source": null,
+      "verified": false
+    },
+    "cgcloud.PricingConditionsCleanupBatch": {
+      "description": null,
+      "source": null,
+      "verified": false
+    },
+    "cgcloud.PricingConditionsHashPopulateBatch": {
+      "description": null,
+      "source": null,
+      "verified": false
+    },
+    "cgcloud.PromotionAttachmentClearNotUsedBatch": {
+      "description": null,
+      "source": null,
+      "verified": false
+    },
+    "cgcloud.PromotionAutoCloseBatch": {
+      "description": null,
+      "source": null,
+      "verified": false
+    },
+    "cgcloud.PromotionTransferBatch": {
+      "description": "Transfers promotions, tactics and files from Trade Promotion Management to Retail Execution in bulk, up to 20,000 promotions per run. Run the PromotionAggregation batch (AggregatePromotionBatch) afterwards so the mobile app gets the promotion data.",
+      "batchSize": 8,
+      "notes": "Scheduled per sales org, so it can't be scheduled from the UI; it takes constructor arguments.",
+      "source": "https://trailhead.salesforce.com/content/learn/modules/integrated-promotions-with-consumer-goods-cloud/transfer-promotions",
+      "verified": false
+    }
+  }
+}
